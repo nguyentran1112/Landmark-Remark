@@ -17,6 +17,12 @@ jobs:
         java-version: 11
     - name: Make Gradle executable
       run: chmod +x ./gradlew
+    - name: Google map api key
+      run: echo 'MAPS_API_KEY=${{ secrets.MAPS_API_KEY }}' > ./local.properties
+    - name: Check code style
+      run: ./gradlew ktlintCheck
+    - name: Format code
+      run: ./gradlew ktlintFormat
     - name: Build Debug APK
       run: ./gradlew assembleDebug
     - name: Build Release APK
