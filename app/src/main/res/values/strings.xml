@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Landmark Remark</string>
+    <string name="home">Home</string>
+    <string name="history">History</string>
+    <string name="add">Add</string>
+    <string name="title_activity_home_screen" translatable="false">HomeScreen</string>
+    <string name="search">Search</string>
+    <string name="search_note">Search note</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save note</string>
+    <string name="like">Like</string>
+    <string name="cmt">Comment</string>
+    <string name="create_in">The note has been created in</string>
+    <string name="notes">Note</string>
+    <string name="your_name">Your name</string>
+    <string name="say_something">Say something</string>
+    <string name="your_location">Your location</string>
+    <string name="current_location">Your current location has been determined</string>
+</resources>

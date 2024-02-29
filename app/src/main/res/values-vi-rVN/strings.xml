@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Landmark Remark</string>
+    <string name="home">Trang chủ</string>
+    <string name="history">Lịch sử</string>
+    <string name="add">Thêm</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="search_note">Tìm kiếm ghi chú</string>
+    <string name="cancel">Hủy</string>
+    <string name="save">Lưu ghi chú</string>
+    <string name="like">Thích</string>
+    <string name="cmt">Bình luận</string>
+    <string name="create_in">Ghi chú này được tạo ở</string>
+    <string name="notes">Ghi chú</string>
+    <string name="your_name">Tên của bạn</string>
+    <string name="say_something">Hãy nói gì đó</string>
+    <string name="your_location">Vị tri của bạn</string>
+    <string name="current_location">Vị trí hiện tại của bạn đã được xác định</string>
+</resources>

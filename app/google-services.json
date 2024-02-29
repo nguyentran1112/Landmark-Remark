@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "580759112976",
+    "project_id": "lmapp-415612",
+    "storage_bucket": "lmapp-415612.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580759112976:android:ce1b207d0f099cf90e6995",
+        "android_client_info": {
+          "package_name": "tcnguyen.app.landmarkremark"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABES4S-fM-kaRcFAvvPCKoU0xYHID-OUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

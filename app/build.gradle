@@ -1,0 +1,109 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+    id "org.jlleitschuh.gradle.ktlint" version "11.1.0"
+}
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def googleMapApiKey = properties.getProperty('MAPS_API_KEY')
+android {
+    namespace 'tcnguyen.app.landmarkremark'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "tcnguyen.app.landmarkremark"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+        manifestPlaceholders = [googleMapApiKey: googleMapApiKey]
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.4.3'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+tasks.getByPath("preBuild").dependsOn ("ktlintFormat")
+
+ktlint {
+    android = true
+    ignoreFailures = false
+    disabledRules = [""]
+    reporters {
+        reporter "plain"
+        reporter "checkstyle"
+        reporter "sarif"
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:+'
+    implementation "androidx.compose.ui:ui:$compose_version"
+    def composeBom = platform('androidx.compose:compose-bom:2024.02.01')
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
+    implementation 'androidx.compose.material3:material3:1.2.0'
+    implementation("androidx.compose.material3:material3-window-size-class:1.2.0")
+    implementation "androidx.compose.material:material-icons-extended"
+    implementation "androidx.compose.ui:ui-tooling-preview"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.7.0"
+    implementation 'androidx.activity:activity-compose:1.8.2'
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation "androidx.window:window:1.2.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3"
+    implementation 'org.osmdroid:osmdroid-android:6.1.16'
+
+    // Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth-ktx:22.0.0'
+
+    // Firebase Cloud Firestore
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.6.0'
+
+    // Mapcompose
+    implementation 'com.google.maps.android:maps-compose:2.4.0'
+
+    // Google Service location and maps
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.android.gms:play-services-location:20.0.0'
+    implementation 'com.google.gms:google-services:4.3.5'
+
+    // Dagger-Hilt
+    implementation "com.google.dagger:hilt-android:2.45"
+    implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
+
+    implementation "com.google.accompanist:accompanist-permissions:0.31.0-alpha"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4"
+    debugImplementation "androidx.compose.ui:ui-tooling"
+    debugImplementation "androidx.compose.ui:ui-test-manifest"
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}
