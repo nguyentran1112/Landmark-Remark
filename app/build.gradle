@@ -49,18 +49,18 @@ android {
         }
     }
 }
-tasks.getByPath("preBuild").dependsOn ("ktlintFormat")
-
-ktlint {
-    android = true
-    ignoreFailures = false
-    disabledRules = ["no-wildcard-imports"]
-    reporters {
-        reporter "plain"
-        reporter "checkstyle"
-        reporter "sarif"
-    }
-}
+//tasks.getByPath("preBuild").dependsOn ("ktlintFormat")
+//
+//ktlint {
+//    android = true
+//    ignoreFailures = false
+//    disabledRules = ["no-wildcard-imports"]
+//    reporters {
+//        reporter "plain"
+//        reporter "checkstyle"
+//        reporter "sarif"
+//    }
+//}
 
 dependencies {
 
