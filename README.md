@@ -23,12 +23,12 @@ This sample showcases:
 * Material Design 3 theming and Material You dynamic color
 
 ## Branches
-[development]()
+[development](https://github.com/nguyentran1112/Landmark-Remark/tree/development)
 - Landmark Remark app development
 
 
 ## Code style
-Using [ktlint](https://github.com/pinterest/ktlint) in [development]() branch for the code style checking
+Using [ktlint](https://github.com/pinterest/ktlint) in [development](https://github.com/nguyentran1112/Landmark-Remark/tree/development) branch for the code style checking
 
 ### Commands
 Checking command
