@@ -27,7 +27,8 @@ class LocationNoteRepository {
         val myUuid = UUID.randomUUID().toString()
         db.collection("LocationNote").document(myUuid).get().addOnSuccessListener {
             if (it.exists()) {
-                db.collection("LocationNote").document(UUID.randomUUID().toString()).set(locationNote)
+                db.collection("LocationNote").document(UUID.randomUUID().toString())
+                    .set(locationNote)
                     .addOnSuccessListener {
                     }
                     .addOnFailureListener {
